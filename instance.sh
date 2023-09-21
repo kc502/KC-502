@@ -15,11 +15,11 @@ gcloud auth list
 echo -e "${yellow}Creating config list project ...${plain}"
 gcloud config list project
 
-echo -e "${yellow}Creating git clone ...${plain}"
-git clone https://github.com/googlecodelabs/orchestrate-with-kubernetes.git
+#echo -e "${yellow}Creating git clone ...${plain}"
+#git clone https://github.com/googlecodelabs/orchestrate-with-kubernetes.git
 
 echo -e "${yellow}Creating Region ...${plain}"
-gcloud config set compute/zone southasia-east1-b
+gcloud config set compute/zone southasia-east1
 
 echo -e "${yellow}Creating instance ...${plain}"
 instance=$(gcloud container clusters create bootcamp --image-type "UBUNTU_CONTAINERD" --num-nodes 1 --scopes "https://www.googleapis.com/auth/projecthosting,storage-rw")
