@@ -12,17 +12,12 @@ plain='\033[0m'
 echo -e "${yellow}Creating auth list ...${plain}"
 gcloud auth list
 
-echo -e "${yellow}Creating config list project ...${plain}"
-gcloud config list project
-
-#echo -e "${yellow}Creating git clone ...${plain}"
-#git clone https://github.com/googlecodelabs/orchestrate-with-kubernetes.git
-
+echo""
 echo -e "${yellow}Creating Region ...${plain}"
-gcloud config set compute/zone southasia-east1
+gcloud config set compute/zone 
 
 echo -e "${yellow}Creating instance ...${plain}"
-instance=$(gcloud container clusters create bootcamp --image-type "UBUNTU_CONTAINERD" --num-nodes 1 --scopes "https://www.googleapis.com/auth/projecthosting,storage-rw")
+instance=$(gcloud dataproc clusters create cluster-502 --enable-component-gateway --region asia-east1 --single-node --master-machine-type n2-standard-4 --master-boot-disk-size 250 --shielded-secure-boot --image-version 2.0-ubuntu18 --scopes 'https://www.googleapis.com/auth/cloud-platform')
 echo -e "${green}Instance created.${plain}"
 
 echo -e "${yellow}Checking firewall rule ...${plain}"
@@ -43,17 +38,18 @@ echo "------------------------------------"
 printf "  Proudly developed the script by  \n"
 echo "------------------------------------"
 echo ""
-echo -e "${yellow}▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ${plain}"
-echo -e "${green}  ______       __        ___                                                 ${plain}"
-echo -e "${green} /\  ___\    /'__`\    /'___`\                                               ${plain}"
-echo -e "${green} \ \ \__/   /\ \/\ \  /\_\ /\ \                                              ${plain}"
-echo -e "${green}  \ \___``\ \ \ \ \ \ \/_/// /__                                             ${plain}"
-echo -e "${green}   \/\ \L\ \ \ \ \_\ \   // /_\ \                                            ${plain}"
-echo -e "${green}    \ \____/  \ \____/  /\______/                                            ${plain}"
-echo -e "${green}     \/___/    \/___/   \/_____/                                             ${plain}"                                                            
-echo -e "${red}Contact the developer https://t.me/kochitt for more information                ${plain}"
-echo -e "${yellow}▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ${plain}"
 
+echo -e "${yellow}▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬${plain}"
+echo -e "${green}   ______       __        ___      ${plain}"
+echo -e "${green}  /\  ___\    /'__`\    /'___`\    ${plain}"
+echo -e "${green}  \ \ \__/   /\ \/\ \  /\_\ /\ \   ${plain}"
+echo -e "${green}   \ \___``\ \ \ \ \ \ \/_/// /__  ${plain}"
+echo -e "${green}    \/\ \L\ \ \ \ \_\ \   // /_\ \ ${plain}"
+echo -e "${green}     \ \____/  \ \____/  /\______/ ${plain}"
+echo -e "${green}      \/___/    \/___/   \/_____/  ${plain}"
+echo -e "${red}Contact the developer https://t.me/kochitt for more information${plain}"
+echo -e "${yellow}▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬${plain}"                             
+                                                                                                                                                                                                                                         
 #else
 #  echo -e "${red}Token is invalid or expired. Contact the developer https://t.me/nkka404 for more information.${plain}"
 #fi
