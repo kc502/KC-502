@@ -12,12 +12,8 @@ plain='\033[0m'
 echo -e "${yellow}Creating auth list ...${plain}"
 gcloud auth list
 
-echo""
-echo -e "${yellow}Creating Region ...${plain}"
-gcloud config set compute/zone 
-
 echo -e "${yellow}Creating instance ...${plain}"
-instance=$(gcloud dataproc clusters create cluster-502 --enable-component-gateway --region asia-east1 --single-node --master-machine-type n2-standard-4 --master-boot-disk-size 250 --shielded-secure-boot --image-version 2.0-ubuntu18 --scopes 'https://www.googleapis.com/auth/cloud-platform')
+instance=$(gcloud dataproc clusters create cluster-502 --enable-component-gateway --region us-east1 --single-node --master-machine-type n2-standard-2 --master-boot-disk-size 250 --num-master-local-ssds 1 --shielded-secure-boot --image-version 2.0-ubuntu18)
 echo -e "${green}Instance created.${plain}"
 
 echo -e "${yellow}Checking firewall rule ...${plain}"
@@ -33,23 +29,17 @@ fi
 
 #echo -e "Username: ${green}$5${plain}, Password: ${green}$6${plain}, SSH Host :  ${green}$(grep -oP '(?<=EXTERNAL_IP: ).*' <<<"$instance")${plain}"
 #echo -e "SSH Host :  ${green}$(grep -oP '(?<=EXTERNAL_IP: ).*' <<<"$instance")${plain}"
-echo ""
-echo "------------------------------------"
-printf "  Proudly developed the script by  \n"
-echo "------------------------------------"
-echo ""
+echo -e "\nProudly developed by ...${yellow}
 
-echo -e "${yellow}▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬${plain}"
-echo -e "${green}   ______       __        ___      ${plain}"
-echo -e "${green}  /\  ___\    /'__`\    /'___`\    ${plain}"
-echo -e "${green}  \ \ \__/   /\ \/\ \  /\_\ /\ \   ${plain}"
-echo -e "${green}   \ \___``\ \ \ \ \ \ \/_/// /__  ${plain}"
-echo -e "${green}    \/\ \L\ \ \ \ \_\ \   // /_\ \ ${plain}"
-echo -e "${green}     \ \____/  \ \____/  /\______/ ${plain}"
-echo -e "${green}      \/___/    \/___/   \/_____/  ${plain}"
-echo -e "${red}Contact the developer https://t.me/kochitt for more information${plain}"
-echo -e "${yellow}▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬${plain}"                             
+  ______       __        ___     
+ /\  ___\    /'__`\    /'___`\   
+ \ \ \__/   /\ \/\ \  /\_\ /\ \  
+  \ \___``\ \ \ \ \ \ \/_/// /__ 
+   \/\ \L\ \ \ \ \_\ \   // /_\ \
+    \ \____/  \ \____/  /\______/ ${plain}♥️${yellow}
+     \/___/    \/___/   \/_____/ ${green}https://t.me/kochitt${plain}
+                                                                  
                                                                                                                                                                                                                                          
 #else
-#  echo -e "${red}Token is invalid or expired. Contact the developer https://t.me/nkka404 for more information.${plain}"
+#  echo -e "${red}Token is invalid or expired. Contact the developer https://t.me/kochitt for more information.${plain}"
 #fi
