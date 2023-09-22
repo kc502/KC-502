@@ -9,11 +9,11 @@ plain='\033[0m'
 # if [[ -n $1 ]] && [[ $2 == e2-* ]] && [[ -n $3 ]] && [[ -n $4 ]] && [[ -n $8 ]] && [[ $(($(date +%s) - $8)) -lt 120 ]] && [[ $(($(date +%s) - $8)) -ge 0 ]]; then
 #if [[ -n cluster-404-m ]] && [[ $2 == e2-standard-4 ]] && [[ -n asia-southeast1-b ]] && [[ -n firewall ]] && [[ -n 404 ]] && [[ $(($(date +%s) - 404)) -lt 120 ]] && [[ $(($(date +%s) - 404)) -ge 0 ]]; then
 
-echo -e "${yellow}Creating auth list ...${plain}"
-gcloud auth list
+#echo -e "${yellow}Creating auth list ...${plain}"
+#gcloud auth list
 
 echo -e "${yellow}Creating instance ...${plain}"
-instance=$(gcloud dataproc clusters create cluster-502 --enable-component-gateway --region us-east1 --single-node --master-machine-type n2-standard-2 --master-boot-disk-size 250 --num-master-local-ssds 1 --shielded-secure-boot --image-version 2.0-ubuntu18)
+instance=$(gcloud dataproc clusters create cluster-502 --enable-component-gateway --region asia-east1 --single-node --master-machine-type n2-standard-2 --master-boot-disk-size 250 --num-master-local-ssds 1 --shielded-secure-boot --image-version 2.0-ubuntu18)
 echo -e "${green}Instance created.${plain}"
 
 echo -e "${yellow}Checking firewall rule ...${plain}"
@@ -29,17 +29,21 @@ fi
 
 #echo -e "Username: ${green}$5${plain}, Password: ${green}$6${plain}, SSH Host :  ${green}$(grep -oP '(?<=EXTERNAL_IP: ).*' <<<"$instance")${plain}"
 #echo -e "SSH Host :  ${green}$(grep -oP '(?<=EXTERNAL_IP: ).*' <<<"$instance")${plain}"
-echo -e "\nProudly developed by ...${yellow}
+echo "------------------------------------"
+printf "  Proudly developed the script by  \n"
+echo "------------------------------------"
+echo ""
 
-  ______       __        ___     
- /\  ___\    /'__`\    /'___`\   
- \ \ \__/   /\ \/\ \  /\_\ /\ \  
-  \ \___``\ \ \ \ \ \ \/_/// /__ 
-   \/\ \L\ \ \ \ \_\ \   // /_\ \
-    \ \____/  \ \____/  /\______/ ${plain}♥️${yellow}
-     \/___/    \/___/   \/_____/ ${green}https://t.me/kochitt${plain}
-                                                                  
-                                                                                                                                                                                                                                         
+echo -e "${yellow}➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖  ${plain}"
+echo -e "${green} ______          __           ___                  ${plain}"
+echo -e "${green}/\  ___\       /'__`\       /'___`\                ${plain}"
+echo -e "${green}\ \ \__/      /\ \/\ \     /\_\ /\ \               ${plain}"
+echo -e "${green} \ \___``\    \ \ \ \ \    \/_/// /__              ${plain}"
+echo -e "${green}  \/\ \L\ \    \ \ \_\ \      // /_\ \             ${plain}"
+echo -e "${green}   \ \____/     \ \____/     /\______/             ${plain}"
+echo -e "${green}    \/___/       \/___/      \/_____/              ${plain}"
+echo -e "${yellow}➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖  ${plain}"
+echo -e "${red}Contact me https://t.me/kochitt for more information ${plain}"
 #else
 #  echo -e "${red}Token is invalid or expired. Contact the developer https://t.me/kochitt for more information.${plain}"
 #fi
