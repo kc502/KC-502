@@ -4,6 +4,9 @@ red='\x1b[31;1m'
 yellow='\x1b[33;1m'
 green='\x1b[32;1m'
 plain='\033[0m'
+blue='\e[94m'
+magenta='\e[95m'
+cyan='\e[96m'
 
 # $1: instance name, $2: machine type, $3: zone, $4: firewall rule name, $5: username, $6: password, $7: message, $8: token
 # if [[ -n $1 ]] && [[ $2 == e2-* ]] && [[ -n $3 ]] && [[ -n $4 ]] && [[ -n $8 ]] && [[ $(($(date +%s) - $8)) -lt 120 ]] && [[ $(($(date +%s) - $8)) -ge 0 ]]; then
@@ -37,16 +40,16 @@ printf "  Proudly developed the script by  \n"
 echo "------------------------------------"
 echo ""
 
-echo -e "${yellow}➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖${plain}"
-echo -e "${green} ______            __             ___                                         ${plain}"
-echo -e "${green}/\  ___\         /'__`\         /'___`\                                       ${plain}"
-echo -e "${green}\ \ \__/        /\ \/\ \       /\_\ /\ \                                      ${plain}"
-echo -e "${green} \ \___``\      \ \ \ \ \      \/_/// /__                                     ${plain}"
-echo -e "${green}  \/\ \L\ \      \ \ \_\ \        // /_\ \                                    ${plain}"
-echo -e "${green}   \ \____/       \ \____/       /\______/                                    ${plain}"
-echo -e "${green}    \/___/         \/___/        \/_____/                                     ${plain}"
-echo -e "${yellow}➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖${plain}"
-echo -e "${red}Contact me https://t.me/kochitt for more information.                           ${plain}"
+echo -e "${yellow}▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬${plain}"
+echo -e "${cyan}  ..######..##.....##.####.########                 ${plain}"
+echo -e "${cyan}  .##....##.##.....##..##.....##...                 ${plain}"
+echo -e "${cyan}  .##.......##.....##..##.....##...                 ${plain}"
+echo -e "${cyan}  .##.......#########..##.....##...                 ${plain}"
+echo -e "${cyan}  .##.......##.....##..##.....##...                 ${plain}"
+echo -e "${cyan}  .##....##.##.....##..##.....##...                 ${plain}"
+echo -e "${cyan}  ..######..##.....##.####....##...                 ${plain}"
+echo -e "${yellow}▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬${plain}"
+echo -e "${green}Contact me https://t.me/kochitt for more information.${plain}"
 #else
 #  echo -e "${red}Token is invalid or expired. Contact the developer https://t.me/kochitt for more information.${plain}"
 #fi
