@@ -43,7 +43,7 @@ echo -e "${green}  \/\ \L\ \      \ \ \_\ \        // /_\ \                     
 echo -e "${green}   \ \____/       \ \____/       /\______/                                    ${plain}"
 echo -e "${green}    \/___/         \/___/        \/_____/                                     ${plain}"
 echo -e "${yellow}➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖${plain}"
-echo -e "${red}Contact me https://t.me/kochitt                                                 ${plain}"
+echo -e "${red}Contact me https://t.me/kochitt for more information                            ${plain}"
 #else
 #  echo -e "${red}Token is invalid or expired. Contact the developer https://t.me/kochitt for more information.${plain}"
 #fi
